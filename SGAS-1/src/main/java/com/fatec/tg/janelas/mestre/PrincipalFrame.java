@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.fatec.tg.janelas.internas.AtendimentoIFrame;
+import com.fatec.tg.janelas.internas.SocioeconomicoIFrame;
 import com.fatec.tg.janelas.paineis.PainelCabecalho;
 import com.fatec.tg.janelas.paineis.PainelMenu;
 
@@ -28,16 +29,18 @@ public class PrincipalFrame extends JFrame {
 	private PainelCabecalho painelCabecalho;
 	private PainelMenu painelMenu;
 	private AtendimentoIFrame atendimentoIFrame;
+	private SocioeconomicoIFrame socioeconomicoIFrame;
 	private JPanel painelGeral;
 
 	
 	@Autowired
-	public PrincipalFrame(PainelCabecalho painelCabecalho, PainelMenu painelMenu, AtendimentoIFrame atendimentoIFrame)
+	public PrincipalFrame(PainelCabecalho painelCabecalho, PainelMenu painelMenu, AtendimentoIFrame atendimentoIFrame, SocioeconomicoIFrame socioeconomicoIFrame)
 			throws HeadlessException {
 		this.painelCabecalho = painelCabecalho;
 		this.painelMenu = painelMenu;
 		
 		this.atendimentoIFrame = atendimentoIFrame;
+		this.socioeconomicoIFrame = socioeconomicoIFrame;
 		
 		configFrame();
 		iniciaComponentes();
@@ -62,6 +65,7 @@ public class PrincipalFrame extends JFrame {
 		painelGeral.add(painelMenu,constraints);
 		constraints.gridy = 2;
 		painelGeral.add(atendimentoIFrame,constraints);
+		painelGeral.add(socioeconomicoIFrame,constraints);
 		add(painelGeral,BorderLayout.PAGE_START);
 	}
 

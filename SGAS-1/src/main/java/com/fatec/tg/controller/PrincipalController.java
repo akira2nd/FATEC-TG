@@ -39,6 +39,7 @@ public class PrincipalController extends UsoGeralController {
 
 	private void abrirSocioeconomico() {
 		// TODO arrumar
+		principalFrame.getSocioeconomicoIFrame().setVisible(true);
 		System.out.println("socioeconomico");
 		
 
