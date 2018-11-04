@@ -14,14 +14,16 @@ public class PrincipalController extends UsoGeralController {
 
 	private PrincipalFrame principalFrame;
 	private AtendimentoController atendimentoController;
+	private SocioeconomicoController socioeconomicoController;
 	@Setter
 	private Usuario usuario;
 
 
 	@Autowired
-	public PrincipalController(PrincipalFrame principalFrame,AtendimentoController atendimentoController) {
+	public PrincipalController(PrincipalFrame principalFrame,AtendimentoController atendimentoController, SocioeconomicoController socioeconomicoController) {
 		this.principalFrame = principalFrame;
 		this.atendimentoController = atendimentoController;
+		this.socioeconomicoController = socioeconomicoController;
 		this.usuario = new Usuario();
 		//this.usuario = usuario;
 	}
@@ -47,6 +49,7 @@ public class PrincipalController extends UsoGeralController {
 
 	private void abrirServico() {
 		// TODO Auto-generated method stub
+		principalFrame.getServicosIFrame().setVisible(true);
 		System.out.println("servico");
 		
 	}
@@ -63,5 +66,6 @@ public class PrincipalController extends UsoGeralController {
 		System.out.println("funcionou!!!!!");
 
 	}
+
 	
 }

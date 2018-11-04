@@ -4,39 +4,38 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 
 import javax.swing.BorderFactory;
+import javax.swing.JComboBox;
 import javax.swing.JPanel;
-import javax.swing.JTextArea;
 
 import org.springframework.stereotype.Component;
 
+import lombok.Getter;
+
 @SuppressWarnings("serial")
 @Component
-public class PainelSaude extends JPanel {
-	
-	private JTextArea textAreaSaude;
-	
-	public PainelSaude() {
+@Getter
+public class PainelServicoCurso extends JPanel {
+
+	private JComboBox<String> comboBoxCursos;
+
+	public PainelServicoCurso() {
 		configPainel();
 		iniciaComponentes();
 	}
 
 	private void configPainel() {
+		setBorder(BorderFactory.createTitledBorder("Serviços / Cursos"));
 		setLayout(new GridBagLayout());
-		setBorder(BorderFactory.createTitledBorder("Informações sobre a Saúde"));
 	}
 
 	private void iniciaComponentes() {
 		GridBagConstraints constraints = new GridBagConstraints();
+		constraints.fill = GridBagConstraints.NONE;
 		constraints.anchor = GridBagConstraints.WEST;
-		constraints.fill = GridBagConstraints.BOTH;
-		
-		textAreaSaude = new JTextArea(5, 40);
-		textAreaSaude.setLineWrap(true);
-		textAreaSaude.setWrapStyleWord(true);
-		textAreaSaude.setBorder(BorderFactory.createTitledBorder("Observações"));
-		
-		add(textAreaSaude, constraints);
-		
-	}
 
+		comboBoxCursos = new JComboBox<>();
+		comboBoxCursos.setBorder(BorderFactory.createTitledBorder("Selecione o serviço / curso"));
+
+		add(comboBoxCursos, constraints);
+	}
 }

@@ -16,6 +16,5 @@ public abstract class UsoGeralController {
 	protected void menuAddActionListener(JMenuItem menuItem, ActionListener actionListener) {
 		menuItem.addActionListener(actionListener);
 	}
-	
 
 }

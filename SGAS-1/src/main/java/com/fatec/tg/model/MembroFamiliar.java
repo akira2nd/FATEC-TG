@@ -37,7 +37,7 @@ public class MembroFamiliar {
 	private String parentesco;
 	
 	@Column(name="estudante")
-	private String estudante;
+	private boolean estudante;
 	
 	@Column(name="serie")
 	private String serie;

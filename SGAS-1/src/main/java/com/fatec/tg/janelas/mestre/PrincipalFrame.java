@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.fatec.tg.janelas.internas.AtendimentoIFrame;
+import com.fatec.tg.janelas.internas.ServicosIFrame;
 import com.fatec.tg.janelas.internas.SocioeconomicoIFrame;
 import com.fatec.tg.janelas.paineis.PainelCabecalho;
 import com.fatec.tg.janelas.paineis.PainelMenu;
@@ -30,17 +31,19 @@ public class PrincipalFrame extends JFrame {
 	private PainelMenu painelMenu;
 	private AtendimentoIFrame atendimentoIFrame;
 	private SocioeconomicoIFrame socioeconomicoIFrame;
+	private ServicosIFrame servicosIFrame;
 	private JPanel painelGeral;
 
 	
 	@Autowired
-	public PrincipalFrame(PainelCabecalho painelCabecalho, PainelMenu painelMenu, AtendimentoIFrame atendimentoIFrame, SocioeconomicoIFrame socioeconomicoIFrame)
+	public PrincipalFrame(PainelCabecalho painelCabecalho, PainelMenu painelMenu, AtendimentoIFrame atendimentoIFrame, SocioeconomicoIFrame socioeconomicoIFrame, ServicosIFrame servicosIFrame)
 			throws HeadlessException {
 		this.painelCabecalho = painelCabecalho;
 		this.painelMenu = painelMenu;
 		
 		this.atendimentoIFrame = atendimentoIFrame;
 		this.socioeconomicoIFrame = socioeconomicoIFrame;
+		this.servicosIFrame = servicosIFrame;
 		
 		configFrame();
 		iniciaComponentes();
@@ -66,6 +69,7 @@ public class PrincipalFrame extends JFrame {
 		constraints.gridy = 2;
 		painelGeral.add(atendimentoIFrame,constraints);
 		painelGeral.add(socioeconomicoIFrame,constraints);
+		painelGeral.add(servicosIFrame, constraints);
 		add(painelGeral,BorderLayout.PAGE_START);
 	}
 

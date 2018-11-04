@@ -48,7 +48,7 @@ public class PainelMenu extends JPanel {
 		menuItemRelatorio = new JMenuItem("*******");
 		menuServico = new JMenu("Serviços/Cursos ");
 		menuItemServico = new JMenuItem("Novo Cadastro Serviço/Curso");
-		menuSocioeconomico = new JMenu("Acompanhamento_Socioeconomico ");
+		menuSocioeconomico = new JMenu("Socioeconomico ");
 		menuItemSocioeconomico = new JMenuItem("Novo Cadastro Socioeconomico");
 		
 		menuAtendimento.add(menuItemAtendimento);

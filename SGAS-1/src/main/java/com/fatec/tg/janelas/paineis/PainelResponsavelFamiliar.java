@@ -92,7 +92,7 @@ public class PainelResponsavelFamiliar extends JPanel {
 		} catch (ParseException e2) {
 			e2.printStackTrace();
 		}
-		textFieldTelefone.setBorder(BorderFactory.createTitledBorder("Telefone"));
+		textFieldTelefone.setBorder(BorderFactory.createTitledBorder("Celular"));
 		NumberFormat numero = NumberFormat.getNumberInstance();
 		DecimalFormat decimal = (DecimalFormat) numero;
 		decimal.setGroupingUsed(false);
