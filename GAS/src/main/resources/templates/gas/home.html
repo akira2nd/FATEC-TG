@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Obra Social Nossa Senhora de Fátima</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/login.css}"/>
+
+</head>
+<body>
+	<header>
+		teste
+		<nav>
+		<a th:href="@{/gas/atendimento}" th:text="Atendimento"></a>
+		</nav>
+	</header>
+	<div>
+		<form th:action="@{/logout}" method="get">
+			<button name="sair" type="submit">Sair</button>
+		</form>
+		
+		<span th:utext="${usuarioNome}"></span>
+		
+		<p th:utext="${msgAdmin}"></p>
+	</div>
+	 
+</body>
+</html>

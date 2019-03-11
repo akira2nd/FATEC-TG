@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="utf-8" />
+<title>Formulario de cadastro</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/registrar.css}" />
+</head>
+
+<body>
+	<form th:action="@{/}" method="get">
+		<button class="btn btn-md btn-warning btn-block" type="Submit">ir
+			para página de login</button>
+	</form>
+
+	<div>
+		<div>
+			<div>
+				<form autocomplete="off" action="#" th:action="@{/registrar}"
+					th:object="${usuario}" method="post" class="form-horizontal"
+					role="form">
+
+					<h2>Formulario de cadastro</h2>
+
+					<div>
+						<div>
+							<input type="text" th:field="*{nome}" placeholder="Nome"
+								class="form-control" /> <label
+								th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"
+								class="validation-message"></label>
+						</div>
+					</div>
+
+					<div>
+						<div>
+							<input type="text" th:field="*{email}" placeholder="Email"
+								class="form-control" /> <label
+								th:if="${#fields.hasErrors('email')}" th:errors="*{email}"
+								class="validation-message"></label>
+						</div>
+					</div>
+
+					<div>
+						<div>
+							<input type="password" th:field="*{senha}" placeholder="Senha"
+								class="form-control" /> <label
+								th:if="${#fields.hasErrors('senha')}" th:errors="*{senha}"
+								class="validation-message"></label>
+						</div>
+					</div>
+
+					<div>
+						<div>
+							<button type="submit" class="btn btn-primary btn-block">Cadastrar
+								usuário</button>
+						</div>
+					</div>
+
+					<span th:utext="${msgSucesso}"></span>
+
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

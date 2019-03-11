@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Obra Social Nossa Senhora de Fátima</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/login.css}"/>
+
+</head>
+<body>
+	<header>
+		<nav>
+		</nav>
+	</header> 
+	<div>
+		<form th:action="@{/login}" method="post">
+			<h3 th:text="'Bem Vindo, faça seu login'"></h3>
+			<br/>
+			<input type="text" id="email" name="email" th:placeholder="E-mail"/>
+			<br/>
+			<input type="password" id="senha" name="senha" th:placeholder="Senha"/>
+			<br/>
+			<div align="center" th:if="${param.error}">
+				<p style="font-size: 20; color: #FF1C19;">E-mail ou senha inválidos</p>
+			</div>
+			<button name="Submit" value="Login" type="submit" th:text="Login"></button>
+		</form>
+		<form th:action="@{/registrar}" method="get">
+			<button type="submit">Ir para página de Cadastro</button>
+		</form>
+		
+	</div>
+	
+	
+</body>
+</html>

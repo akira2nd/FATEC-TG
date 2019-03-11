@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Atendimento - Obra Social Nossa Senhora de Fátima</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/login.css}"/>
+
+</head>
+<body>
+	<header>
+		teste
+		<nav>
+		</nav>
+	</header>
+	<div>
+		<form action="#" th:action="@{/atendimento}" method="post" th:object="${atendimento}">
+			<input type="text" th:value="*{#dates.format(dataAtendimento, 'dd/mm/yyyy')}" disabled="disabled"/>
+			<input type="text" th:placeholder="Nome"/>
+			<input type="email" th:placeholder="E-mail"/>
+			<select>
+				<option th:each="motivo : ${T(com.fatec.tg.model.MotivoContato).values()}"
+						th:value="${motivo}"
+						th:text="${motivo}">
+				</option>
+			</select>
+			<select>
+				<option th:each="formaContato : ${T(com.fatec.tg.model.FormaDeContato).values()}"
+						th:value="${formaContato}"
+						th:text="${formaContato}">
+				</option>
+			</select>
+			<label>Observações<textarea rows="5" cols="100" maxlength="500"></textarea></label>
+			<input type="text" th:placeholder="'Nome Usuario'" disabled="disabled"/>
+			<button name="salvar" type="submit">Salvar</button>
+		</form>
+		
+		<span th:utext="${usuarioNome}"></span>
+		
+		<p th:utext="${msgAdmin}"></p>
+	</div>
+	 
+</body>
+</html>
